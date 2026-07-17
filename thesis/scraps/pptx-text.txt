@@ -1,0 +1,119 @@
+=== ppt/slides/slide1.xml ===
+MASTER THESIS DEFENCE  ·  2026
+86
+knowledge workers surveyed across the EU, UK &amp; US — first-hand evidence, not hype.
+What is generative AI
+actually doing to
+professional work
+?
+Reshaping workforce dynamics and adaptation in the professional-services industry.
+Clara Koch Silva
+    MSc International Management (Technology Management) &amp; MBA
+United International Business School   ·   Supervisor: Prof. Dr. Yelena Smirnova
+
+=== ppt/slides/slide2.xml ===
+1 · INTRODUCTION
+A new general-purpose technology arrived — faster than any before it
+2017
+Transformer
+architecture
+“Attention Is All You Need” — the engine behind LLMs
+2022
+ChatGPT goes
+mainstream
+GAI becomes a general-purpose tool overnight
+2024–25
+Reasoning models
+Chain-of-thought, verification, planning
+2026
+Agentic AI
+Systems that plan &amp; act autonomously toward goals
+The tension.  
+GAI is framed at once as 
+substitute
+ and 
+augmenter
+ of expert work. Professional services — advisory, high-stakes, knowledge-intensive — are the most exposed, yet real-world evidence on what is changing remains thin.
+C. Koch Silva  ·  GAI &amp; Workforce Adaptation in Professional Services
+2
+
+=== ppt/slides/slide3.xml ===
+2 · MOTIVATION &amp; OBJECTIVE
+The evidence gap — and the three questions that close it
+Why this study
+Canonical evidence predates today&apos;s models.
+Task framework: automation displaces, new tasks reinstate (Acemoglu &amp; Restrepo, 2019)
+~19% of US jobs have ≥50% of tasks LLM-exposed (Eloundou et al., 2023)
+“Jagged frontier”: +25% speed / +40% quality inside it — degraded judgement outside (Dell&apos;Acqua et al., 2023)
+RQ1
+Reconfiguration of roles &amp; identities
+Is the effect replacement, enhancement — or something else altogether?
+RQ2
+Preparedness &amp; skill erosion
+Does organisational readiness enable development? What protects the junior-talent pipeline?
+RQ3
+Productivity: perception vs. reality
+Real gains or perceived? Quality, workload, or job satisfaction?
+C. Koch Silva  ·  GAI &amp; Workforce Adaptation in Professional Services
+3
+
+=== ppt/slides/slide4.xml ===
+3 · MAIN FINDINGS — I
+Augmentation is here. 
+Transformation is concentrated.
+Where the sample lands, on average
+Only Skill Augmentation &amp; Productivity clear neutral (3.0) with 95% confidence — GAI amplifies expertise more than it changes what the job is.
+The adoption-intensity gradient
+The strongest signal in the whole dataset
+Every gap is large &amp; significant
+  (Cohen&apos;s d 0.91–1.38, all p &lt; .001). Job transformation splits hardest: 
+3.54 vs 2.27
+. The “average” hides two workforces.
+C. Koch Silva  ·  GAI &amp; Workforce Adaptation in Professional Services
+4
+
+=== ppt/slides/slide5.xml ===
+3 · MAIN FINDINGS — II
+Faster, yes. 
+Better — not yet.
+The perception / reality gap
+76%
+agree GAI makes
+them faster
+35%
+agree quality
+improved
+70%
+save ≤ 1 hour
+per day
+Speed is real; quality lags below neutral and time saved is modest — partly reabsorbed as oversight.
+Governance is the dividing line
+r = .71
+Preparedness → real role change
+r = .59
+Preparedness → skill development
+r = .50
+Preparedness → productivity
+Skill erosion concentrates on the junior pipeline.  
+Knowledge access jumps (67%) while genuine skill-building stalls (34%).
+“It feels like more work to control and correct the errors than simply doing it myself.”
+C. Koch Silva  ·  GAI &amp; Workforce Adaptation in Professional Services
+5
+
+=== ppt/slides/slide6.xml ===
+4 · REFLECTIONS
+What I&apos;d flag, what to caveat, and what 2026 now confirms
+Corrections &amp; honesty
+One sub-scale — Organisational Context (α = .55) — is two-dimensional (policy vs. support); treated as formative and read with caution, not as a clean reflective scale.
+HTMT discriminant values run high: constructs correlate. Findings are read as patterns, not causal claims.
+AE5 (deskilling) reported standalone, not folded into augmentation.
+Limitations
+Cross-sectional &amp; self-reported — associations, not causation; perceived productivity, not audited output.
+Purposive, non-probability sample (N = 86): analytic, not statistical, generalisation.
+Next step: a longitudinal panel (12 &amp; 24 months) within one sector to test causal direction.
+Latest research aligns
+NBER WP 34984 (Baslandze et al., 2026): ~750 executives document the SAME productivity paradox — perceived gains exceed measured gains.
+PwC AI Jobs Barometer 2026: a two-track market — AI-exposed junior roles now demand senior-level skills, echoing my pipeline concern.
+Thomson Reuters 2026: field enters the “strategic phase” — governance &amp; workflow redesign, exactly the dividing line found here.
+Bottom line:  
+enhancement with a new oversight layer — not replacement; the productivity gain is perceived ahead of realised; and governance, not tool access, is what separates firms where people grow from firms where skills erode.
