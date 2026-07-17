@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Research Presentations — Agentic &amp; Generative AI</title>
+<meta name="description" content="Master's thesis and capstone project presentations on agentic and generative AI." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1526; --navy:#12203B; --navy2:#1B2A4A;
+    --line:rgba(201,210,228,0.16);
+    --panel:rgba(255,255,255,0.035);
+    --gold:#C9A24B; --gold-lt:#E4C979;
+    --text:#EAEFF8; --muted:#A6B2C9; --muted2:#7E8CA8;
+    --serif:'Spectral',Georgia,serif;
+    --sans:'Archivo',system-ui,sans-serif;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ -webkit-text-size-adjust:100%; }
+  body{
+    font-family:var(--sans);
+    color:var(--text);
+    background:
+      radial-gradient(130% 105% at 12% -5%, rgba(58,74,110,0.30) 0%, transparent 55%),
+      linear-gradient(158deg,#0B1526 0%,#12203B 62%,#16264A 100%);
+    background-attachment:fixed;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+  .shell{
+    width:100%;
+    max-width:1180px;
+    margin:0 auto;
+    padding:clamp(1.25rem,3.5vw,2.4rem) clamp(1.1rem,4vw,2.4rem) 2.5rem;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* ---------- Masthead ---------- */
+  .masthead{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:1.5rem;
+    flex-wrap:wrap;
+    border-bottom:1px solid var(--line);
+    padding-bottom:1.1rem;
+  }
+  .kicker{
+    font-size:.72rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:.55rem;
+  }
+  .masthead h1{
+    font-family:var(--serif);
+    font-weight:300;
+    font-size:clamp(1.5rem,4vw,2.3rem);
+    line-height:1.08;
+    letter-spacing:-.01em;
+    color:#fff;
+  }
+  .masthead h1 em{ font-style:italic; color:var(--gold-lt); }
+  .masthead .inst{
+    font-size:.8rem;
+    color:var(--muted2);
+    text-align:right;
+    line-height:1.5;
+    max-width:16rem;
+  }
+
+  /* ---------- Tabs ---------- */
+  .tabs{
+    display:flex;
+    gap:.4rem;
+    margin-top:1.4rem;
+    flex-wrap:wrap;
+  }
+  .tab{
+    appearance:none;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:7px;
+    color:var(--muted);
+    font-family:var(--sans);
+    font-size:.95rem;
+    font-weight:500;
+    padding:.68rem 1.25rem;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+    transition:color .2s, border-color .2s, background .2s;
+  }
+  .tab .num{
+    font-size:.72rem;
+    letter-spacing:.1em;
+    color:var(--gold);
+    opacity:.7;
+  }
+  .tab:hover{ color:var(--text); border-color:rgba(201,162,75,.4); }
+  .tab[aria-selected="true"]{
+    color:#fff;
+    background:linear-gradient(180deg, rgba(201,162,75,.16), rgba(201,162,75,.05));
+    border-color:var(--gold);
+  }
+  .tab[aria-selected="true"] .num{ opacity:1; }
+  .tab:focus-visible{ outline:2px solid var(--gold-lt); outline-offset:2px; }
+
+  /* ---------- Deck viewer ---------- */
+  .stage-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    margin:1.4rem 0 .7rem;
+    gap:1rem;
+    flex-wrap:wrap;
+  }
+  .stage-title{
+    font-family:var(--serif);
+    font-size:1.05rem;
+    color:var(--text);
+  }
+  .stage-title span{ color:var(--muted2); font-family:var(--sans); font-size:.82rem; }
+  .popout{
+    font-size:.82rem;
+    color:var(--gold-lt);
+    text-decoration:none;
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:.42rem .8rem;
+    display:inline-flex;
+    align-items:center;
+    gap:.45rem;
+    transition:border-color .2s, color .2s, background .2s;
+    white-space:nowrap;
+  }
+  .popout:hover{ color:#fff; border-color:var(--gold); background:rgba(201,162,75,.08); }
+  .popout svg{ width:13px; height:13px; }
+
+  .frame-wrap{
+    position:relative;
+    width:100%;
+    aspect-ratio:16 / 9;
+    max-height:calc(100vh - 320px);
+    min-height:340px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+    background:#0B1526;
+    box-shadow:0 24px 60px -30px rgba(0,0,0,.8);
+  }
+  .frame-wrap iframe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    border:0;
+    display:none;
+  }
+  .frame-wrap iframe.active{ display:block; }
+
+  .hint{
+    margin-top:.9rem;
+    font-size:.78rem;
+    color:var(--muted2);
+    text-align:center;
+  }
+  .hint kbd{
+    font-family:var(--sans);
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:.05rem .4rem;
+    color:var(--muted);
+    font-size:.72rem;
+  }
+
+  footer{
+    margin-top:auto;
+    padding-top:1.8rem;
+    color:var(--muted2);
+    font-size:.76rem;
+    text-align:center;
+  }
+
+  @media (max-width:640px){
+    .masthead .inst{ text-align:left; }
+    .frame-wrap{ max-height:none; }
+  }
+</style>
+</head>
+<body>
+  <div class="shell">
+
+    <header class="masthead">
+      <div>
+        <p class="kicker">Master&rsquo;s Research &middot; 2026</p>
+        <h1>Agentic &amp; Generative AI<br><em>research presentations</em></h1>
+      </div>
+      <!-- EDIT ME (optional): your institution / name -->
+      <div class="inst">United International Business School</div>
+    </header>
+
+    <div class="tabs" role="tablist" aria-label="Presentations">
+      <button class="tab" role="tab" id="tab-thesis"   aria-selected="true"  aria-controls="frame-thesis"
+              data-deck="thesis"><span class="num">01</span> Master Thesis</button>
+      <button class="tab" role="tab" id="tab-capstone" aria-selected="false" aria-controls="frame-capstone"
+              data-deck="capstone"><span class="num">02</span> Capstone Project</button>
+    </div>
+
+    <div class="stage-head">
+      <div class="stage-title" id="stage-title">Master Thesis <span>&middot; What is generative AI actually doing to professional work?</span></div>
+      <a class="popout" id="popout" href="thesis.html" target="_blank" rel="noopener">
+        Open fullscreen
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M17 7H8M17 7v9"/></svg>
+      </a>
+    </div>
+
+    <div class="frame-wrap">
+      <iframe id="frame-thesis"   class="active" src="thesis.html"   title="Master Thesis presentation"   allow="fullscreen" allowfullscreen></iframe>
+      <iframe id="frame-capstone" src=""                          title="Capstone Project presentation" allow="fullscreen" allowfullscreen></iframe>
+    </div>
+
+    <p class="hint">Click into a deck, then use <kbd>&larr;</kbd> <kbd>&rarr;</kbd> to move through slides &middot; or open it fullscreen in a new tab.</p>
+
+    <footer>Two presentations &middot; one link. Built for review and archival.</footer>
+  </div>
+
+<script>
+  (function(){
+    var decks = {
+      thesis:   { title: "Master Thesis",    sub: "What is generative AI actually doing to professional work?", path: "thesis.html" },
+      capstone: { title: "Capstone Project", sub: "Beyond the Hype Cycle — the promise vs. the reality gap",       path: "capstone.html" }
+    };
+    var tabs   = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+    var titleEl = document.getElementById('stage-title');
+    var popout  = document.getElementById('popout');
+
+    function activate(deck){
+      tabs.forEach(function(t){
+        var on = t.dataset.deck === deck;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      ['thesis','capstone'].forEach(function(d){
+        var f = document.getElementById('frame-' + d);
+        if (d === deck){
+          if (!f.getAttribute('src')) f.setAttribute('src', decks[d].path); // lazy-load, so deck sizes correctly
+          f.classList.add('active');
+        } else {
+          f.classList.remove('active');
+        }
+      });
+      titleEl.innerHTML = decks[deck].title + ' <span>&middot; ' + decks[deck].sub + '</span>';
+      popout.setAttribute('href', decks[deck].path);
+    }
+
+    tabs.forEach(function(t){
+      t.addEventListener('click', function(){ activate(t.dataset.deck); });
+      t.addEventListener('keydown', function(e){
+        var i = tabs.indexOf(t);
+        if (e.key === 'ArrowRight'){ e.preventDefault(); tabs[(i+1)%tabs.length].focus(); tabs[(i+1)%tabs.length].click(); }
+        if (e.key === 'ArrowLeft'){ e.preventDefault(); tabs[(i-1+tabs.length)%tabs.length].focus(); tabs[(i-1+tabs.length)%tabs.length].click(); }
+      });
+    });
+  })();
+</script>
+</body>
+</html>
